@@ -4,6 +4,7 @@
   - [2.2. Pretrained Models](#22-pretrained-models)
 - [3. Inference](#3-inference)
   - [3.1. Instant Use](#31-instant-use)
+  - [self-define](#self-define)
   - [3.2. Training](#32-training)
 - [4. Other](#4-other)
   - [4.1. Citation](#41-citation)
@@ -82,13 +83,6 @@ python inference.py \
  --batch_size=2
 ```
 
-python inference.py \
- --config configs/inference.yaml \
- --video_source=/home/sword/Downloads/obama.mp4 \
- --output_dir=./docs/demo/output \
- --if_extract \
- --if_align \
- --batch_size=2
 
 
 
@@ -137,12 +131,18 @@ python inference.py \
 The support editable attributes of `attribute_edit` include `young`, `old`, `beard`, `lip`. 
 Note to preserve the editing attributes details in W space, the optimized inversion method is banned here. 
 
-<!--
-Audio Reenactment
+
+## self-define
+
+```bash
+python inference.py \
+ --config configs/inference.yaml \
+ --video_source=/home/sword/Downloads/obama.mp4 \
+ --output_dir=./docs/demo/output \
+ --if_extract \
+ --if_align \
+ --batch_size=2
 ```
-TODO
-```
--->
 
 ## 3.2. Training
 
