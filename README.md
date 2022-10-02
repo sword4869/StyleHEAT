@@ -4,8 +4,8 @@
   - [2.2. Pretrained Models](#22-pretrained-models)
 - [3. Inference](#3-inference)
   - [3.1. Instant Use](#31-instant-use)
-  - [self-define](#self-define)
-  - [3.2. Training](#32-training)
+  - [3.2. self-define](#32-self-define)
+  - [3.3. Training](#33-training)
 - [4. Other](#4-other)
   - [4.1. Citation](#41-citation)
   - [4.2. Acknowledgement](#42-acknowledgement)
@@ -84,9 +84,6 @@ python inference.py \
 ```
 
 
-
-
-
 > Cross-Identity Reenactment with a single image and a video.
 
 ```bash
@@ -132,7 +129,11 @@ The support editable attributes of `attribute_edit` include `young`, `old`, `bea
 Note to preserve the editing attributes details in W space, the optimized inversion method is banned here. 
 
 
-## self-define
+## 3.2. self-define
+
+because `torch.stack()` will explode the 12G memory:
+- It is limited in video size that the total time is less 20 seconds (in RTX 2080 Ti, 12G) 
+- big batch_size will also explode.
 
 ```bash
 python inference.py \
@@ -144,7 +145,7 @@ python inference.py \
  --batch_size=2
 ```
 
-## 3.2. Training
+## 3.3. Training
 
 Data preprocessing.
 
